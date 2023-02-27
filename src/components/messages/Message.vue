@@ -19,7 +19,7 @@
         <div class="mx-5">
           <label for="person1-input"></label>
           <input
-              v-model="Message"
+              v-model="message"
               id="person1-input"
               type="text"
               class="w-full p-5 btn-border rounded-sm h-[63px]"
@@ -59,14 +59,14 @@ const listMessages = ref([
 ])
 
 const sendMessage = (direction) => {
-  if (!Message.value.length) return
+  if (!message.value.length) return
   if (direction === 'in') {
     listMessages.value.push({
-      text: Message.value,
+      text: message.value,
       author: 'Vasyl Diakovych',
       date: new Date().toDateString().slice(4, 20),
     })
-    Message.value = ''
+    message.value = ''
   } else {
     alert('something went wrong')
   }
